@@ -1,6 +1,6 @@
 {
   "name": "logseq-dailynote-plugin",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Daily Note Plugin",
   "main": "dist/index.html",
   "targets": {
