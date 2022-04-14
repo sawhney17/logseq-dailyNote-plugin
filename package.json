@@ -1,7 +1,7 @@
 {
-  "name": "logseq-starter-plugin",
-  "version": "1.0",
-  "description": "Starter Plugin",
+  "name": "logseq-dailynote-plugin",
+  "version": "1.0.0",
+  "description": "Daily Note Plugin",
   "main": "dist/index.html",
   "targets": {
     "main": false
@@ -14,11 +14,12 @@
   "author": "Aryan Sawhney",
   "license": "MIT",
   "dependencies": {
-    "@logseq/libs": "0.0.1-alpha.34"
+    "@logseq/libs": "0.0.1-alpha.35",
+    "logseq-dateutils": "^0.0.20"
   },
   "logseq": {
-    "id": "logseq-starter-plugin",
-    "title": "logseq-starter-plugin",
+    "id": "logseq-dailynote-plugin",
+    "title": "logseq-dailynote-plugin",
     "icon": "./icon.png"
   },
   "devDependencies": {
