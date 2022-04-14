@@ -14,6 +14,7 @@ let settings: SettingSchemaDesc[] = [
 ]
 const main = async () => {
   logseq.useSettingsSchema(settings);
+
   const registerCommand = async () => {
     logseq.App.unregister_plugin_simple_command(`${logseq.baseInfo.id}/KeyboardShortcut`)
     logseq.App.registerCommandPalette({
@@ -24,9 +25,15 @@ const main = async () => {
         binding: logseq.settings.keyboardShortcut
       },
     }, async () => {
+      //get yesterdays date as a date object
+      let date = new Date();
+      date.setDate(date.getDate() - 1);
+      logseq.App.pushState('page', { name: getDateForPage(date, (await logseq.App.getUserConfigs()).preferredDateFormat).slice(2, -2) })
       logseq.App.pushState('page', { name: getDateForPage(new Date(), (await logseq.App.getUserConfigs()).preferredDateFormat).slice(2, -2) })
+
     })
   }
+  
   logseq.onSettingsChanged(
     registerCommand
   )
